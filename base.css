@@ -1,8 +1,7 @@
-body {
-    background-color: rgba(225, 206, 16, 0.44);
+.pad {
+    padding: 10px;
 }
 
-
-h1 {
-    color: red;
+.box {
+    border-radius: 10px;
 }
