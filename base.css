@@ -5,3 +5,19 @@
 .box {
     border-radius: 10px;
 }
+
+
+.marg-top{
+    margin-top: 15px;
+}
+
+.footer-phones{
+    padding-top: 8px;
+}
+.footer-phones p{
+    line-height: 7px;
+}
+
+.footer-phones span {
+    margin-right: 5px;
+}
