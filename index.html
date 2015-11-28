@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lte IE 8]><script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
@@ -17,60 +19,23 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="base.css">
-    <link rel="import" href="header.html" data-el="header">
-    <link rel="import" href="footer.html" data-el="footer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js" crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/base.css">
 
     <title>Comfort zone - иготовление, реконструкция, перетяжка мягкой мебели мебели</title>
 </head>
-<body>
+<body ng-app="App">
 
-<header></header>
+<ng-include src="'tpl/header.html'"></ng-include>
 
 <main class="container">
-    <div class="col-md-4 col-sm-6 pad">
-        <div class="jumbotron pad box">
-            <h3>Hello, world!</h3>
-            <a href="#" class="thumbnail">
-                <img src="http://lorempixel.com/800/600/cats/1" alt="Cat">
-            </a>
-
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-                content or information.</p>
-
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6 pad">
-        <div class="jumbotron pad box">
-            <h3>Hello, world!</h3>
-            <a href="#" class="thumbnail">
-                <img src="http://lorempixel.com/800/600/cats/2" alt="Cat">
-            </a>
-
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-                content or information.</p>
-
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6 pad">
-        <div class="jumbotron pad box">
-            <h3>Hello, world!</h3>
-            <a href="#" class="thumbnail">
-                <img src="http://lorempixel.com/800/600/cats/3" alt="Cat">
-            </a>
-
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-                content or information.</p>
-
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-        </div>
-    </div>
+    <div ng-view></div>
 </main>
 
-<footer></footer>
+<ng-include src="'tpl/footer.html'"></ng-include>
 
-<script src="js/html5-imports.js"></script>
 </body>
 </html>
