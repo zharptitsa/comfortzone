@@ -12,5 +12,11 @@ app.config(function($routeProvider) {
         })
         .when('/contacts', {
             templateUrl : 'tpl/contacts.html'
+        })
+        .when('/about', {
+            templateUrl : 'tpl/about.html'
+        })
+        .when('/product/:alias', {
+            templateUrl : 'tpl/product.html'
         });
 });
