@@ -27,3 +27,13 @@ app.controller("MenuController", function($scope, $location) {
         return currentPage === page;
     };
 });
+/*
+app.controller('ProductsController', function ($scope) {
+    Parse.initialize("ccdu6yYl2PmUCyYzErO6DMX6lhDZ4fTUHU5F4j9u", "WSlFuOFST7E8HCY8ZNndvNa7d3jFNqfHxE92HTPc");
+    var query = new Parse.Query('Products');
+    query.limit(1000).find().done(function(list){
+        //list[0].get('images')
+    });
+    //debugger;
+});
+*/
