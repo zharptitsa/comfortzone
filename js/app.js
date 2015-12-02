@@ -7,8 +7,8 @@ app.config(function($routeProvider) {
         .when('/', {
             templateUrl : 'tpl/main.html'
         })
-        .when('/gallery', {
-            templateUrl : 'tpl/gallery.html'
+        .when('/products', {
+            templateUrl : 'tpl/products.html'
         })
         .when('/contacts', {
             templateUrl : 'tpl/contacts.html'
@@ -19,4 +19,11 @@ app.config(function($routeProvider) {
         .when('/product/:alias', {
             templateUrl : 'tpl/product.html'
         });
+});
+
+app.controller("MenuController", function($scope, $location) {
+    $scope.isCurrent = function(page) {
+        var currentPage = $location.path().substring(1);
+        return currentPage === page;
+    };
 });
