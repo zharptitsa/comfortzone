@@ -27,3 +27,7 @@
         display: block;
     }
 }
+
+.main-page-carousel {
+    min-height: 195px;
+}
