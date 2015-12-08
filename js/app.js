@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
         });
 });
 
-app.controller("MenuController", function($scope, $location, DataService) {
+app.controller('MenuController', function($scope, $location, DataService) {
     $scope.Categories = DataService.getCategories();
     $scope.isCurrent = function(page) {
         var currentPage = $location.path().substring(1);
@@ -31,7 +31,6 @@ app.controller("MenuController", function($scope, $location, DataService) {
 
 app.controller('MainController', function ($scope, DataService) {
     $scope.Products = DataService.getProducts();
-    console.log($scope.Products);
 });
 
 app.controller('ProductsController', function ($scope, $routeParams, DataService) {

@@ -5,7 +5,7 @@
             <div class="jumbotron pad box">
                 <h3>{{Product.Name}}</h3>
                 <a href="#/product/{{Product.Alias}}/" class="thumbnail" ng-if="Product.Images.length">
-                    <img ng-src="{{Product.Images[0].Url}}" alt="Cat">
+                    <img ng-src="http://res.cloudinary.com/dyymh1gnj/image/upload/c_scale,q_90,w_800/{{Product.Images[0].Url}}" alt="Cat">
                 </a>
 
                 <p>{{Product.Description}}</p>
