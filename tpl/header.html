@@ -19,8 +19,9 @@
                            aria-haspopup="true"
                            aria-expanded="false">Товары <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#/products">Корпусная мебель</a></li>
-                            <li><a href="#/products">Мягкая мебель</a></li>
+                            <li ng-repeat="Category in Categories">
+                                <a href="#/products/{{Category.Alias}}">{{Category.Name}}</a>
+                            </li>
                         </ul>
                     </li>
                     <li ng-class="isCurrent('about')?'active':''"><a href="#/about">О компании</a></li>

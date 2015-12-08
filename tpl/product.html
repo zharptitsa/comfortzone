@@ -1,14 +1,11 @@
-<div class="jumbotron container">
+<div class="jumbotron container" ng-controller="ProductController">
     <div class="col-md-4">
-        <img src="http://lorempixel.com/800/600/cats/1" alt="Cat" class="img-thumbnail col-md-6">
-        <img src="http://lorempixel.com/800/600/cats/1" alt="Cat" class="img-thumbnail col-md-6">
-        <img src="http://lorempixel.com/800/600/cats/1" alt="Cat" class="img-thumbnail col-md-6">
-        <img src="http://lorempixel.com/800/600/cats/1" alt="Cat" class="img-thumbnail col-md-6">
-        <img src="http://lorempixel.com/800/600/cats/1" alt="Cat" class="img-thumbnail col-md-6">
-        <img src="http://lorempixel.com/800/600/cats/1" alt="Cat" class="img-thumbnail col-md-6">
+        <div ng-repeat="Image in Product.Images">
+            <img ng-src="{{Image.Url}}" alt="Cat" class="img-thumbnail col-md-6">
+        </div>
     </div>
     <div class="col-md-8 col-xs-6">
-        <h2>Название товара</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid blanditiis cupiditate dolor dolorem enim et fuga maxime minus molestias, natus non pariatur, perspiciatis, quidem ratione rerum ut? Amet aspernatur aut deleniti dolorum et eum, exercitationem fuga fugiat id labore laudantium magni maiores nam neque optio quisquam quod vitae voluptatum.</p>
+        <h2>{{Product.Name}}</h2>
+        <p>{{Product.Description}}</p>
     </div>
 </div>
