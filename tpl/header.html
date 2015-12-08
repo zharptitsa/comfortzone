@@ -12,19 +12,20 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/">Главная</a></li>
-                    <li class="dropdown">
+                <ul class="nav navbar-nav" ng-controller="MenuController">
+                    <li ng-class="isCurrent('')?'active':''"><a href="#/">Главная</a></li>
+                    <li ng-class="isCurrent('products')?'active dropdown':'dropdown'">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true"
-                           aria-expanded="false">Галерея <span class="caret"></span></a>
+                           aria-expanded="false">Товары <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#/gallery">Корпусная мебель</a></li>
-                            <li><a href="#/gallery">Мягкая мебель</a></li>
+                            <li ng-repeat="Category in Categories">
+                                <a href="#/products/{{Category.Alias}}">{{Category.Name}}</a>
+                            </li>
                         </ul>
                     </li>
-                    <li><a href="#">О компании</a></li>
-                    <li class="active"><a href="#/contacts">Контакты</a></li>
+                    <li ng-class="isCurrent('about')?'active':''"><a href="#/about">О компании</a></li>
+                    <li ng-class="isCurrent('contacts')?'active':''"><a href="#/contacts">Контакты</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

@@ -1,0 +1,17 @@
+<h1>Товары</h1>
+<div ng-controller="ProductsController">
+    <div ng-repeat="Product in Products">
+        <div class="col-md-4 col-sm-6 pad">
+            <div class="jumbotron pad box">
+                <h3>{{Product.Name}}</h3>
+                <a href="#/product/{{Product.Alias}}/" class="thumbnail" ng-if="Product.Images.length">
+                    <img ng-src="{{Product.Images[0].Url}}" alt="Cat">
+                </a>
+
+                <p>{{Product.Description}}</p>
+
+                <p><a class="btn btn-primary btn-lg" href="#/product/{{Product.Alias}}/" role="button">Подробнее</a></p>
+            </div>
+        </div>
+    </div>
+</div>

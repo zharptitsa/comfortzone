@@ -1,0 +1,11 @@
+<div class="jumbotron container" ng-controller="ProductController">
+    <div class="col-md-4">
+        <div ng-repeat="Image in Product.Images">
+            <img ng-src="{{Image.Url}}" alt="Cat" class="img-thumbnail col-md-6">
+        </div>
+    </div>
+    <div class="col-md-8 col-xs-6">
+        <h2>{{Product.Name}}</h2>
+        <p>{{Product.Description}}</p>
+    </div>
+</div>
