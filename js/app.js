@@ -72,3 +72,25 @@ app.service('DataService', function() {
         return categories;
     };
 });
+
+app.directive('productImage', function () {
+    var sizes = {
+        'small': 320,
+        'medium': 640,
+        'big': 1280
+    };
+    var cloudinaryId = 'dyymh1gnj';
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            model: '=',
+            size: '@'
+        },
+        controller: function ($scope) {
+            $scope.width = sizes[$scope.size];
+            $scope.cloudinaryId = cloudinaryId;
+        },
+        template: '<img src="http://res.cloudinary.com/{{cloudinaryId}}/image/upload/c_scale,q_90,w_{{width}}/{{model.Url}}" alt={{model.Name}}>'
+    };
+});
