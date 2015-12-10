@@ -26,10 +26,6 @@ app.config(function($routeProvider, LightboxProvider) {
     LightboxProvider.getImageUrl = function (image) {
         return 'http://res.cloudinary.com/' + cloudinaryId + '/image/upload/c_scale,q_90,w_800/' + image.Url;
     };
-
-    LightboxProvider.getImageCaption = function (image) {
-        return image.Name;
-    };
 });
 
 app.controller('MenuController', function($scope, $location, DataService) {
