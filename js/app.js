@@ -1,8 +1,11 @@
+var cloudinaryId = 'dyymh1gnj';
+
 var app = angular.module('App', [
-    'ngRoute'
+    'ngRoute',
+    'bootstrapLightbox'
 ]);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, LightboxProvider) {
     $routeProvider
         .when('/', {
             templateUrl : 'tpl/main.html'
@@ -19,6 +22,14 @@ app.config(function($routeProvider) {
         .when('/product/:alias', {
             templateUrl : 'tpl/product.html'
         });
+
+    LightboxProvider.getImageUrl = function (image) {
+        return 'http://res.cloudinary.com/' + cloudinaryId + '/image/upload/c_scale,q_90,w_800/' + image.Url;
+    };
+
+    LightboxProvider.getImageCaption = function (image) {
+        return image.Name;
+    };
 });
 
 app.controller('MenuController', function($scope, $location, DataService) {
@@ -73,24 +84,36 @@ app.service('DataService', function() {
     };
 });
 
-app.directive('productImage', function () {
+app.directive('productImage', function (Lightbox) {
     var sizes = {
         'small': 320,
         'medium': 640,
-        'big': 1280
+        'big': 800
     };
-    var cloudinaryId = 'dyymh1gnj';
     return {
         restrict: 'E',
         replace: true,
         scope: {
             model: '=',
-            size: '@'
+            size: '@',
+            lightBox: '@'
         },
-        controller: function ($scope) {
+        link: function ($scope) {
             $scope.width = sizes[$scope.size];
             $scope.cloudinaryId = cloudinaryId;
+            if ($scope.lightBox === 'true' || $scope.lightBox === 'yes') {
+                $scope.clickHandler = function () {
+                    Lightbox.openModal([$scope.model], 0);
+                };
+            }
         },
-        template: '<img src="http://res.cloudinary.com/{{cloudinaryId}}/image/upload/c_scale,q_90,w_{{width}}/{{model.Url}}" alt={{model.Name}}>'
+        template: function($element, $attr) {
+            var html ='<img ng-src="http://res.cloudinary.com/{{cloudinaryId}}/image/upload/c_scale,q_90,w_{{width}}/{{model.Url}}" title={{model.Name}}';
+            if ($attr.lightBox === 'true' || $attr.lightBox === 'yes') {
+                html += ' ng-click="clickHandler()"';
+            }
+            html += '>';
+            return html;
+        }
     };
 });

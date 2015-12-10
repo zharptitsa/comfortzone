@@ -35,3 +35,7 @@
 .main-page-carousel {
     min-height: 195px;
 }
+
+[light-box="yes"] {
+    cursor: pointer;
+}
