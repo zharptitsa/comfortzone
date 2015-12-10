@@ -1,11 +1,12 @@
-<div class="jumbotron container" ng-controller="ProductController">
-    <div class="col-md-4">
-        <div ng-repeat="Image in Product.Images">
-            <product-image model="Image" size="medium" class="img-thumbnail col-md-6" />
-        </div>
-    </div>
-    <div class="col-md-8 col-xs-6">
+<div class="container" ng-controller="ProductController">
+    <div class="col-md-12 col-xs-12 jumbotron hero-spacer">
         <h2>{{Product.Name}}</h2>
         <p>{{Product.Description}}</p>
+    </div>
+
+    <div>
+        <div ng-repeat="Image in Product.Images">
+            <product-image model="Image" size="medium" class="img-thumbnail col-md-4 margin-bottom" />
+        </div>
     </div>
 </div>
