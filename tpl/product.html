@@ -6,7 +6,12 @@
 
     <div>
         <div ng-repeat="Image in Product.Images">
-            <product-image model="Image" size="medium" light-box="yes" class="img-thumbnail col-md-4 margin-bottom" />
+            <product-image
+                    model="Image"
+                    size="medium"
+                    light-box="yes"
+                    light-box-collection="Product.Images"
+                    class="img-thumbnail col-md-4 margin-bottom" />
         </div>
     </div>
 </div>

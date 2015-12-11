@@ -92,14 +92,17 @@ app.directive('productImage', function (Lightbox) {
         scope: {
             model: '=',
             size: '@',
-            lightBox: '@'
+            lightBox: '@',
+            lightBoxCollection: '='
         },
         link: function ($scope) {
             $scope.width = sizes[$scope.size];
             $scope.cloudinaryId = cloudinaryId;
             if ($scope.lightBox === 'true' || $scope.lightBox === 'yes') {
                 $scope.clickHandler = function () {
-                    Lightbox.openModal([$scope.model], 0);
+                    var collection = $scope.lightBoxCollection === undefined ?
+                        [$scope.model] : $scope.lightBoxCollection;
+                    Lightbox.openModal(collection, collection.indexOf($scope.model));
                 };
             }
         },
