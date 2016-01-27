@@ -1,0 +1,21 @@
+.item-block {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .item-block {
+        height: 251px;
+    }
+}
+@media (min-width: 992px) {
+    .item-block {
+        height: 216px;
+    }
+}
+@media (min-width: 1200px) {
+    .item-block {
+        height: 266px;
+    }
+}
